@@ -754,7 +754,7 @@ def main():
                         date = decrypt(array[choice][4], encryptionKey).decode("utf-8")
                         dateobj = datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f')
                         lblDOCS.config(text=dateobj.strftime('%Y-%m-%d %H:%M:%S'))
-                        outdated = dateobj + timedelta(days=(settings[0][1] * 30))
+                        outdated = dateobj + timedelta(days=(userSettings.timeframe * 30))
                         DOEobj = outdated.strftime('%Y-%m-%d %H:%M:%S')
                         lblDOES.config(text=DOEobj)
 
